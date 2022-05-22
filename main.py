@@ -28,8 +28,6 @@ for module in os.listdir("./modules"):
                 except ModuleNotFoundError as e:
                     console.log(f"[red] Dependency not found: {e.name.split('.')[-1]}")
                 app.include_router(router.setup())
-
-                # app.include_router(router)
                 
                 console.log(f"Loaded {module} as API")
 
