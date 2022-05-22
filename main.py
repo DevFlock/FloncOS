@@ -1,6 +1,4 @@
 from rich.console import Console
-from rich import print
-import time
 import json
 import os
 from fastapi import FastAPI
@@ -10,8 +8,8 @@ import uvicorn
 app = FastAPI()
 
 @app.get("/")
-def read_root():
-    return {"Hello": "World"}
+async def root():
+    return {"message": "Hello World"}
 
 console = Console()
 
@@ -22,7 +20,6 @@ for module in os.listdir("./modules"):
 
         match config.get("type"):
             case "API":
-
                 try:
                     router = importlib.import_module(f"modules.{module}")
                 except ModuleNotFoundError as e:
