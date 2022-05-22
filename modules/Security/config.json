@@ -1,0 +1,6 @@
+{
+    "name": "Security",
+    "version": "1.0.0",
+    "description": "Simple module to secure your api routes.",
+    "type": "Module"
+}
